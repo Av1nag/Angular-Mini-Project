@@ -1,0 +1,28 @@
+.example-card {
+  width:100%;
+  border-radius: 100px;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.title {
+  margin: 8px;
+}
+
+.list-of-users {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  gap: 20px
+}
+
+mat-paginator {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}

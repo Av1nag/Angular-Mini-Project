@@ -1,0 +1,17 @@
+.content-displayer {
+  height: calc(100vh - 64px);
+}
+.main-heading {
+  margin: right 50px;;
+}
+.header-buttons{
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  /* gap:150px; */
+  justify-content:space-evenly
+}

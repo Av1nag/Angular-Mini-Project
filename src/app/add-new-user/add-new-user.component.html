@@ -1,0 +1,120 @@
+<div class="complete-login-form-class">
+  <h1 class="heading" style="display: flex; justify-content: space-evenly">
+    Add new user info
+  </h1>
+
+  <br />
+  <div class="login-form">
+    <form [formGroup]="newUserDataForm" (ngSubmit)="addNewUserSubmission()">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>User Id</mat-label>
+          <input
+            matInput
+            placeholder="Enter user id"
+            type="text"
+            name="identity-no"
+            formControlName="userId"
+          />
+          <mat-icon matSuffix></mat-icon>
+          <mat-error *ngIf="newUserDataForm.get('userId').errors?.required"
+            >This field is mandatory</mat-error
+          >
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <br /><br />
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Title</mat-label>
+          <input
+            matInput
+            placeholder="Enter title"
+            type="text"
+            name="data-title"
+            formControlName="title"
+          />
+          <mat-icon matSuffix></mat-icon>
+          <mat-error *ngIf="newUserDataForm.get('title').errors?.required"
+            >This field is mandatory</mat-error
+          >
+          <mat-error *ngIf="newUserDataForm.get('title').errors?.minlength"
+            >minimum length 5 characters required</mat-error
+          >
+          <!-- <mat-hint>Hint</mat-hint> -->
+        </mat-form-field>
+      </div>
+      <br /><br />
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Body</mat-label>
+          <input
+            matInput
+            placeholder="Enter body"
+            type="text"
+            name="data-body"
+            formControlName="body"
+          />
+          <mat-icon matSuffix></mat-icon>
+          <!-- <mat-hint>Hint</mat-hint> -->
+
+          <mat-error *ngIf="newUserDataForm.get('body').errors?.required"
+            >This field is mandatory</mat-error
+          >
+          <mat-error *ngIf="newUserDataForm.get('body').errors?.minlength"
+            >minimum length 5 characters required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <br><br>
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        style="margin: 20px"
+        [disabled]="newUserDataForm.invalid"
+      >
+        Submit
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="newUserDataForm.reset()"
+        style="margin: 20px"
+      >
+        Reset
+      </button>
+    </form>
+  </div>
+</div>
+<div *ngIf="(loginFormCompletionTable===true)">
+
+<table>
+  <thead>
+    <tr>
+      <th>User Id</th>
+      <th>Title</th>
+      <th>Body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userDataList">
+      <td class="center">{{ user.userId }}</td>
+      <td class="center">{{ user.title }}</td>
+      <td class="center">{{ user.body }}</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<!-- <div class="complete-login-form-class">
+
+
+  {{ newUserDataForm.value.userId }}
+  {{ newUserDataForm.value.title }}
+  {{ newUserDataForm.value.body }}
+</div> -->

@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" *ngIf="userLoggedIn === true" class="header">
+  <img
+    src="/assets/images/angular_whiteTransparent.png"
+    alt="angular"
+    aria-hidden="true"
+    class="logo"
+    height="32px"
+    routerLink="/home-page"
+  />
+  <div class="main-heading">Angular Final Project</div>
+  <div class="header-buttons">
+    <button mat-raised-button color="primary" routerLink="/home-page">
+      Home
+    </button>
+    <button mat-raised-button color="primary" routerLink="/main-users-data">
+      Users Data
+    </button>
+    <button mat-raised-button color="primary" routerLink="/add-new-user">
+      Add New User
+    </button>
+  </div>
+  <button
+    mat-mini-fab
+    color="primary"
+    aria-label="Example icon button with a delete icon"
+    title="Log Out"
+    (click)="logout()"
+  >
+    <mat-icon>exit_to_app</mat-icon>
+  </button>
+</mat-toolbar>
+<div class="content-viewer">
+  <mat-sidenav-container>
+    <mat-sidenav-content class="content-displayer">
+
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

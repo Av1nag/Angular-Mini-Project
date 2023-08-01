@@ -1,0 +1,19 @@
+<button mat-fab color="primary" class="back-navigation" title="Go to previous page" (click)="navigatePrevoiusPage()"><mat-icon>arrow_back</mat-icon></button>
+
+<div class="list-of-users">
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image" [ngStyle]="{ 'background-image': 'url(' + dataCollector?.url + ')' }"></div>
+    <mat-card-title>{{ dataCollector?.title }}</mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <img mat-card-image  [src]="dataCollector?.url" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+
+  </mat-card-content>
+  <mat-card-actions>
+
+  </mat-card-actions>
+</mat-card>
+
+</div>

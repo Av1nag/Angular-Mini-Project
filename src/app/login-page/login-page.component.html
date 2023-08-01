@@ -1,0 +1,74 @@
+<div class="complete-login-form-class">
+  <div class="heading">
+    <h1>Login to access information</h1>
+  </div>
+  <br /><br />
+  <div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="loginFormSubmission()">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Email ID</mat-label>
+          <input
+            matInput
+            placeholder="Enter mail id "
+            type="text"
+            name="mail"
+            formControlName="mailId"
+          />
+
+          <mat-icon matSuffix>mail_outline</mat-icon>
+          <mat-error *ngIf="loginForm.get('mailId').errors?.required"
+            >This field is mandatory</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('mailId').errors?.minlength"
+            >minimum length 5 characters required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <br /><br />
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="Enter password"
+            type="password"
+            name="password"
+            formControlName="pass"
+          />
+          <mat-icon matSuffix>password</mat-icon>
+          <mat-error *ngIf="loginForm.get('pass').errors?.required"
+            >This field is mandatory</mat-error
+          >
+          <mat-error *ngIf="loginForm.get('pass').errors?.minlength"
+            >minimum length 5 characters required</mat-error
+          >
+        </mat-form-field>
+      </div>
+      <br /><br />
+
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        style="margin: 20px"
+        [disabled]="loginForm.invalid"
+      >
+        Submit
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="loginForm.reset()"
+        style="margin: 20px"
+      >
+        Reset
+      </button>
+    </form>
+  </div>
+  <div class="error-message" *ngIf="messageOfError === true">
+    Please Enter Correct Credentials
+    <div></div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-toolbar color="accent">
+  <!-- <div style="margin: 20px;width: auto;"> -->
+    <button mat-raised-button [matMenuTriggerFor]="menu" color="primary">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item
+      routerLink="users-list"
+    >
+      Users Data List</button>
+      <button mat-menu-item
+      routerLink="users-list-table"
+    >
+      Users Data table</button>
+    </mat-menu>
+    <!-- </div> -->
+    👈👈Click here to view all data
+</mat-toolbar>
+<mat-sidenav-content class="content-displayer">
+
+  <router-outlet></router-outlet>
+</mat-sidenav-content>
+
